@@ -1,4 +1,4 @@
-import { ValidatedInput, FoodItem } from '../types';
+import { ValidatedInput, FoodItem, ChennaiArea } from '../types';
 
 /**
  * Interface for business rules and safety checks
@@ -44,4 +44,17 @@ export interface IRulesEngine {
    * @returns Safety warnings for late night conditions
    */
   checkLateNightSafety(input: ValidatedInput): string[];
+
+  /**
+   * Get cultural ordering tips for the area
+   * @param area - Chennai area
+   * @returns Array of ordering tips and phrases
+   */
+  getCulturalOrderingTips(area: ChennaiArea): string[];
+
+  /**
+   * Get general cultural rules and habits
+   * @returns Array of general cultural guidelines
+   */
+  getGeneralCulturalRules(): string[];
 }
